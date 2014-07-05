@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EA10F24F196863A0000D1B67 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA10F24E196863A0000D1B67 /* Foundation.framework */; };
+		EA10F251196863A0000D1B67 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA10F250196863A0000D1B67 /* CoreGraphics.framework */; };
+		EA10F253196863A0000D1B67 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA10F252196863A0000D1B67 /* UIKit.framework */; };
+		EA10F259196863A0000D1B67 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA10F257196863A0000D1B67 /* InfoPlist.strings */; };
+		EA10F25B196863A0000D1B67 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EA10F25A196863A0000D1B67 /* main.m */; };
+		EA10F25F196863A0000D1B67 /* PASAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA10F25E196863A0000D1B67 /* PASAppDelegate.m */; };
+		EA10F262196863A0000D1B67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA10F260196863A0000D1B67 /* Main.storyboard */; };
+		EA10F265196863A0000D1B67 /* PASViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA10F264196863A0000D1B67 /* PASViewController.m */; };
+		EA10F267196863A0000D1B67 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA10F266196863A0000D1B67 /* Images.xcassets */; };
+		EA10F26E196863A0000D1B67 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA10F26D196863A0000D1B67 /* XCTest.framework */; };
+		EA10F26F196863A0000D1B67 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA10F24E196863A0000D1B67 /* Foundation.framework */; };
+		EA10F270196863A0000D1B67 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA10F252196863A0000D1B67 /* UIKit.framework */; };
+		EA10F278196863A0000D1B67 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA10F276196863A0000D1B67 /* InfoPlist.strings */; };
+		EA10F27A196863A0000D1B67 /* PocketAssistantTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EA10F279196863A0000D1B67 /* PocketAssistantTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EA10F271196863A0000D1B67 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA10F243196863A0000D1B67 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EA10F24A196863A0000D1B67;
+			remoteInfo = PocketAssistant;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EA10F24B196863A0000D1B67 /* PocketAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA10F24E196863A0000D1B67 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EA10F250196863A0000D1B67 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EA10F252196863A0000D1B67 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		EA10F256196863A0000D1B67 /* PocketAssistant-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PocketAssistant-Info.plist"; sourceTree = "<group>"; };
+		EA10F258196863A0000D1B67 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EA10F25A196863A0000D1B67 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EA10F25C196863A0000D1B67 /* PocketAssistant-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PocketAssistant-Prefix.pch"; sourceTree = "<group>"; };
+		EA10F25D196863A0000D1B67 /* PASAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PASAppDelegate.h; sourceTree = "<group>"; };
+		EA10F25E196863A0000D1B67 /* PASAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PASAppDelegate.m; sourceTree = "<group>"; };
+		EA10F261196863A0000D1B67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EA10F263196863A0000D1B67 /* PASViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PASViewController.h; sourceTree = "<group>"; };
+		EA10F264196863A0000D1B67 /* PASViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PASViewController.m; sourceTree = "<group>"; };
+		EA10F266196863A0000D1B67 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EA10F26C196863A0000D1B67 /* PocketAssistantTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PocketAssistantTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA10F26D196863A0000D1B67 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		EA10F275196863A0000D1B67 /* PocketAssistantTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PocketAssistantTests-Info.plist"; sourceTree = "<group>"; };
+		EA10F277196863A0000D1B67 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EA10F279196863A0000D1B67 /* PocketAssistantTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PocketAssistantTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EA10F248196863A0000D1B67 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA10F251196863A0000D1B67 /* CoreGraphics.framework in Frameworks */,
+				EA10F253196863A0000D1B67 /* UIKit.framework in Frameworks */,
+				EA10F24F196863A0000D1B67 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA10F269196863A0000D1B67 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA10F26E196863A0000D1B67 /* XCTest.framework in Frameworks */,
+				EA10F270196863A0000D1B67 /* UIKit.framework in Frameworks */,
+				EA10F26F196863A0000D1B67 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EA10F242196863A0000D1B67 = {
+			isa = PBXGroup;
+			children = (
+				EA10F254196863A0000D1B67 /* PocketAssistant */,
+				EA10F273196863A0000D1B67 /* PocketAssistantTests */,
+				EA10F24D196863A0000D1B67 /* Frameworks */,
+				EA10F24C196863A0000D1B67 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EA10F24C196863A0000D1B67 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EA10F24B196863A0000D1B67 /* PocketAssistant.app */,
+				EA10F26C196863A0000D1B67 /* PocketAssistantTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EA10F24D196863A0000D1B67 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA10F24E196863A0000D1B67 /* Foundation.framework */,
+				EA10F250196863A0000D1B67 /* CoreGraphics.framework */,
+				EA10F252196863A0000D1B67 /* UIKit.framework */,
+				EA10F26D196863A0000D1B67 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EA10F254196863A0000D1B67 /* PocketAssistant */ = {
+			isa = PBXGroup;
+			children = (
+				EA10F25D196863A0000D1B67 /* PASAppDelegate.h */,
+				EA10F25E196863A0000D1B67 /* PASAppDelegate.m */,
+				EA10F260196863A0000D1B67 /* Main.storyboard */,
+				EA10F263196863A0000D1B67 /* PASViewController.h */,
+				EA10F264196863A0000D1B67 /* PASViewController.m */,
+				EA10F266196863A0000D1B67 /* Images.xcassets */,
+				EA10F255196863A0000D1B67 /* Supporting Files */,
+			);
+			path = PocketAssistant;
+			sourceTree = "<group>";
+		};
+		EA10F255196863A0000D1B67 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EA10F256196863A0000D1B67 /* PocketAssistant-Info.plist */,
+				EA10F257196863A0000D1B67 /* InfoPlist.strings */,
+				EA10F25A196863A0000D1B67 /* main.m */,
+				EA10F25C196863A0000D1B67 /* PocketAssistant-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EA10F273196863A0000D1B67 /* PocketAssistantTests */ = {
+			isa = PBXGroup;
+			children = (
+				EA10F279196863A0000D1B67 /* PocketAssistantTests.m */,
+				EA10F274196863A0000D1B67 /* Supporting Files */,
+			);
+			path = PocketAssistantTests;
+			sourceTree = "<group>";
+		};
+		EA10F274196863A0000D1B67 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EA10F275196863A0000D1B67 /* PocketAssistantTests-Info.plist */,
+				EA10F276196863A0000D1B67 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EA10F24A196863A0000D1B67 /* PocketAssistant */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA10F27D196863A1000D1B67 /* Build configuration list for PBXNativeTarget "PocketAssistant" */;
+			buildPhases = (
+				EA10F247196863A0000D1B67 /* Sources */,
+				EA10F248196863A0000D1B67 /* Frameworks */,
+				EA10F249196863A0000D1B67 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PocketAssistant;
+			productName = PocketAssistant;
+			productReference = EA10F24B196863A0000D1B67 /* PocketAssistant.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EA10F26B196863A0000D1B67 /* PocketAssistantTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA10F280196863A1000D1B67 /* Build configuration list for PBXNativeTarget "PocketAssistantTests" */;
+			buildPhases = (
+				EA10F268196863A0000D1B67 /* Sources */,
+				EA10F269196863A0000D1B67 /* Frameworks */,
+				EA10F26A196863A0000D1B67 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EA10F272196863A0000D1B67 /* PBXTargetDependency */,
+			);
+			name = PocketAssistantTests;
+			productName = PocketAssistantTests;
+			productReference = EA10F26C196863A0000D1B67 /* PocketAssistantTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EA10F243196863A0000D1B67 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = PAS;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Sapa Denys";
+				TargetAttributes = {
+					EA10F26B196863A0000D1B67 = {
+						TestTargetID = EA10F24A196863A0000D1B67;
+					};
+				};
+			};
+			buildConfigurationList = EA10F246196863A0000D1B67 /* Build configuration list for PBXProject "PocketAssistant" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EA10F242196863A0000D1B67;
+			productRefGroup = EA10F24C196863A0000D1B67 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EA10F24A196863A0000D1B67 /* PocketAssistant */,
+				EA10F26B196863A0000D1B67 /* PocketAssistantTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EA10F249196863A0000D1B67 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA10F267196863A0000D1B67 /* Images.xcassets in Resources */,
+				EA10F259196863A0000D1B67 /* InfoPlist.strings in Resources */,
+				EA10F262196863A0000D1B67 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA10F26A196863A0000D1B67 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA10F278196863A0000D1B67 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EA10F247196863A0000D1B67 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA10F25B196863A0000D1B67 /* main.m in Sources */,
+				EA10F25F196863A0000D1B67 /* PASAppDelegate.m in Sources */,
+				EA10F265196863A0000D1B67 /* PASViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA10F268196863A0000D1B67 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA10F27A196863A0000D1B67 /* PocketAssistantTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EA10F272196863A0000D1B67 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EA10F24A196863A0000D1B67 /* PocketAssistant */;
+			targetProxy = EA10F271196863A0000D1B67 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EA10F257196863A0000D1B67 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA10F258196863A0000D1B67 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		EA10F260196863A0000D1B67 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA10F261196863A0000D1B67 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EA10F276196863A0000D1B67 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA10F277196863A0000D1B67 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EA10F27B196863A1000D1B67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EA10F27C196863A1000D1B67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EA10F27E196863A1000D1B67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PocketAssistant/PocketAssistant-Prefix.pch";
+				INFOPLIST_FILE = "PocketAssistant/PocketAssistant-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		EA10F27F196863A1000D1B67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PocketAssistant/PocketAssistant-Prefix.pch";
+				INFOPLIST_FILE = "PocketAssistant/PocketAssistant-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		EA10F281196863A1000D1B67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PocketAssistant.app/PocketAssistant";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PocketAssistant/PocketAssistant-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "PocketAssistantTests/PocketAssistantTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		EA10F282196863A1000D1B67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PocketAssistant.app/PocketAssistant";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PocketAssistant/PocketAssistant-Prefix.pch";
+				INFOPLIST_FILE = "PocketAssistantTests/PocketAssistantTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EA10F246196863A0000D1B67 /* Build configuration list for PBXProject "PocketAssistant" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA10F27B196863A1000D1B67 /* Debug */,
+				EA10F27C196863A1000D1B67 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA10F27D196863A1000D1B67 /* Build configuration list for PBXNativeTarget "PocketAssistant" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA10F27E196863A1000D1B67 /* Debug */,
+				EA10F27F196863A1000D1B67 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EA10F280196863A1000D1B67 /* Build configuration list for PBXNativeTarget "PocketAssistantTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA10F281196863A1000D1B67 /* Debug */,
+				EA10F282196863A1000D1B67 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EA10F243196863A0000D1B67 /* Project object */;
+}

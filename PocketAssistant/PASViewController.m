@@ -10,6 +10,8 @@
 
 @interface PASViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *expressionLabel;
+
 @end
 
 @implementation PASViewController
@@ -17,7 +19,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	
+	[self.expressionLabel setBaselineAdjustment:UIBaselineAdjustmentNone];
 }
 
 - (void)didReceiveMemoryWarning

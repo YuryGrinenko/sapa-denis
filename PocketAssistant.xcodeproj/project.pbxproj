@@ -21,6 +21,7 @@
 		EA10F270196863A0000D1B67 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA10F252196863A0000D1B67 /* UIKit.framework */; };
 		EA10F278196863A0000D1B67 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA10F276196863A0000D1B67 /* InfoPlist.strings */; };
 		EA10F27A196863A0000D1B67 /* PocketAssistantTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EA10F279196863A0000D1B67 /* PocketAssistantTests.m */; };
+		EA10F28619689403000D1B67 /* PASExpressionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA10F28519689403000D1B67 /* PASExpressionModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		EA10F275196863A0000D1B67 /* PocketAssistantTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PocketAssistantTests-Info.plist"; sourceTree = "<group>"; };
 		EA10F277196863A0000D1B67 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EA10F279196863A0000D1B67 /* PocketAssistantTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PocketAssistantTests.m; sourceTree = "<group>"; };
+		EA10F28419689403000D1B67 /* PASExpressionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PASExpressionModel.h; sourceTree = "<group>"; };
+		EA10F28519689403000D1B67 /* PASExpressionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PASExpressionModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +115,7 @@
 		EA10F254196863A0000D1B67 /* PocketAssistant */ = {
 			isa = PBXGroup;
 			children = (
+				EA10F283196893DA000D1B67 /* Models */,
 				EA10F25D196863A0000D1B67 /* PASAppDelegate.h */,
 				EA10F25E196863A0000D1B67 /* PASAppDelegate.m */,
 				EA10F260196863A0000D1B67 /* Main.storyboard */,
@@ -150,6 +154,15 @@
 				EA10F276196863A0000D1B67 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EA10F283196893DA000D1B67 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EA10F28419689403000D1B67 /* PASExpressionModel.h */,
+				EA10F28519689403000D1B67 /* PASExpressionModel.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA10F28619689403000D1B67 /* PASExpressionModel.m in Sources */,
 				EA10F25B196863A0000D1B67 /* main.m in Sources */,
 				EA10F25F196863A0000D1B67 /* PASAppDelegate.m in Sources */,
 				EA10F265196863A0000D1B67 /* PASViewController.m in Sources */,

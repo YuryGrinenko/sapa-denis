@@ -10,4 +10,9 @@
 
 @implementation PASExpressionModel
 
+- (NSInteger)calculateResult
+{
+	return 0;
+}
+
 @end

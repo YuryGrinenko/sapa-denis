@@ -23,6 +23,7 @@
 		EA10F27A196863A0000D1B67 /* PocketAssistantTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EA10F279196863A0000D1B67 /* PocketAssistantTests.m */; };
 		EA10F28619689403000D1B67 /* PASExpressionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA10F28519689403000D1B67 /* PASExpressionModel.m */; };
 		EA10F28A1968977D000D1B67 /* PASExpressionFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = EA10F2891968977D000D1B67 /* PASExpressionFormatter.m */; };
+		EA10F28D1969477A000D1B67 /* PASExpressionController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA10F28C1969477A000D1B67 /* PASExpressionController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,8 @@
 		EA10F28519689403000D1B67 /* PASExpressionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PASExpressionModel.m; sourceTree = "<group>"; };
 		EA10F2881968977D000D1B67 /* PASExpressionFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PASExpressionFormatter.h; sourceTree = "<group>"; };
 		EA10F2891968977D000D1B67 /* PASExpressionFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PASExpressionFormatter.m; sourceTree = "<group>"; };
+		EA10F28B1969477A000D1B67 /* PASExpressionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PASExpressionController.h; sourceTree = "<group>"; };
+		EA10F28C1969477A000D1B67 /* PASExpressionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PASExpressionController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +168,8 @@
 			children = (
 				EA10F28419689403000D1B67 /* PASExpressionModel.h */,
 				EA10F28519689403000D1B67 /* PASExpressionModel.m */,
+				EA10F28B1969477A000D1B67 /* PASExpressionController.h */,
+				EA10F28C1969477A000D1B67 /* PASExpressionController.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -276,6 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA10F28D1969477A000D1B67 /* PASExpressionController.m in Sources */,
 				EA10F28619689403000D1B67 /* PASExpressionModel.m in Sources */,
 				EA10F25B196863A0000D1B67 /* main.m in Sources */,
 				EA10F28A1968977D000D1B67 /* PASExpressionFormatter.m in Sources */,

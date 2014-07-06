@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *expressionLabel;
 
+
 @end
 
 @implementation PASViewController
@@ -19,14 +20,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
-	[self.expressionLabel setBaselineAdjustment:UIBaselineAdjustmentNone];
+	[self.expressionLabel setBaselineAdjustment:UIBaselineAdjustmentAlignBaselines];
+	self.expressionLabel.text = @"0";
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)touchPanelButton:(UIButton *)sender
+{
+	NSString *title = sender.titleLabel.text;
+	NSInteger intValue = [title integerValue];
+	
+	int symbolCode = [title characterAtIndex:0];
+	
+	NSLog(@"symbol code %d", symbolCode);
+	
+	if (intValue) {
+		NSLog(@"Integer %d", intValue);
+	}
+	self.expressionLabel.text = [self.expressionLabel.text stringByAppendingString:title];
 }
 
 @end

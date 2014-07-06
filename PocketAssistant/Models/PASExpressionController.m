@@ -10,4 +10,9 @@
 
 @implementation PASExpressionController
 
+- (void)fillModelWithNextCharacter:(NSString *)character
+{
+	
+}
+
 @end

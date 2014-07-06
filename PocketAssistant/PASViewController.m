@@ -7,11 +7,12 @@
 //
 
 #import "PASViewController.h"
+#import "PASExpressionController.h"
 
 @interface PASViewController ()
 
-@property (weak, nonatomic) IBOutlet UILabel *expressionLabel;
-
+@property (nonatomic, weak) IBOutlet UILabel *expressionLabel;
+@property (nonatomic, strong) PASExpressionController *expressionController;
 
 @end
 
@@ -20,8 +21,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	[self.expressionLabel setBaselineAdjustment:UIBaselineAdjustmentAlignBaselines];
-	self.expressionLabel.text = @"0";
+	[_expressionLabel setBaselineAdjustment:UIBaselineAdjustmentAlignBaselines];
+	_expressionLabel.text = @"0";
+	
+	_expressionController = [PASExpressionController new];
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,7 +44,7 @@
 	if (intValue) {
 		NSLog(@"Integer %d", intValue);
 	}
-	self.expressionLabel.text = [self.expressionLabel.text stringByAppendingString:title];
+//	self.expressionLabel.text = [self.expressionLabel.text stringByAppendingString:title];
 }
 
 @end

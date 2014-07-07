@@ -7,6 +7,7 @@
 //
 
 #import "PASExpressionController.h"
+#import "PASExpressionFormatter.h"
 
 typedef NS_ENUM(NSInteger, PASExpressionControllerState) {
 	PASExpressionControllerStatePrint,
@@ -14,6 +15,8 @@ typedef NS_ENUM(NSInteger, PASExpressionControllerState) {
 	PASExpressionControllerStateEnterOperator,
 	PASExpressionControllerStateEnterSecondOperand
 };
+
+static NSInteger const kEqualCode = '=';
 
 @interface PASExpressionController ()
 
@@ -38,38 +41,42 @@ typedef NS_ENUM(NSInteger, PASExpressionControllerState) {
 {
 	switch (self.controllerState) {
 		case PASExpressionControllerStatePrint:
-			
-//			break;
+			[PASExpressionFormatter formattedStringFromExpression:self.operationModel];
+			self.controllerState = PASExpressionControllerStateEnterFirstOperand;
+			break;
 			
 		case PASExpressionControllerStateEnterFirstOperand:
 		{
-			self.controllerState = PASExpressionControllerStateEnterFirstOperand;
-			
 			if ([self isCharacterNumber:character]) {
 				[self.operationModel appendToFirstOperand:character];
 			} else {
 				self.controllerState = PASExpressionControllerStateEnterOperator;
 				
+				[self.operationModel addOperator:character];
 			}
-			
 			break;
 		}
 			
 		case PASExpressionControllerStateEnterOperator:
+			if ([self isCharacterNumber:character]) {
+				self.controllerState = PASExpressionControllerStateEnterSecondOperand;
+				[self.operationModel appendToSecondOperand:character];
+			}
 			break;
 			
 		case PASExpressionControllerStateEnterSecondOperand:
+			if ([self isCharacterNumber:character]) {
+				[self.operationModel appendToSecondOperand:character];
+			} else {
+				self.controllerState = PASExpressionControllerStatePrint;
+				
+				[self.operationModel addOperator:character];
+			}
 			break;
 			
 			
 		default:
 			break;
-	}
-	
-	
-	NSInteger characterValue = [character integerValue];
-	if (characterValue) {
-		
 	}
 }
 

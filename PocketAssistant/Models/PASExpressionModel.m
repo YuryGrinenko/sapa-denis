@@ -10,6 +10,23 @@
 
 @implementation PASExpressionModel
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _empty = YES;
+		_firstOperand = @"";
+		_secondOperand = @"";
+		_baseOperator = @"";
+    }
+    return self;
+}
+
+- (void)clearModel
+{
+	
+}
+
 - (NSInteger)calculateResult
 {
 	return 0;
@@ -23,7 +40,23 @@
 - (void)appendToFirstOperand:(NSString *)character
 {
 	if (self.firstOperand.length || [character integerValue]) {
+		_empty = NO;
 		self.firstOperand = [self.firstOperand stringByAppendingString:character];
+	}
+}
+
+- (void)addOperator:(NSString *)baseOperator
+{
+	if (!self.baseOperator.length) {
+		self.baseOperator = baseOperator;
+	}
+}
+
+- (void)appendToSecondOperand:(NSString *)character
+{
+	if (self.secondOperand.length || [character integerValue]) {
+		_empty = NO;
+		self.secondOperand = [self.secondOperand stringByAppendingString:character];
 	}
 }
 

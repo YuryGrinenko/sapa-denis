@@ -7,12 +7,41 @@
 //
 
 #import "PASExpressionFormatter.h"
+#import "PASExpressionModel.h"
 
 @implementation PASExpressionFormatter
 
 + (NSString *)formattedStringFromExpression:(PASExpressionModel *)model;
 {
-	return @"";
+	NSString *formattedResult = @"";
+	
+	if ([model isEmpty]) {
+		NSLog(@"%@", formattedResult);
+		return formattedResult;
+	}
+	
+	formattedResult = [formattedResult stringByAppendingString:@"%@"];
+	formattedResult = [NSString stringWithFormat:formattedResult, model.firstOperand];
+	
+	if (!model.baseOperator.length) {
+		NSLog(@"%@", formattedResult);
+		return formattedResult;
+	}
+	
+	formattedResult = [formattedResult stringByAppendingString:@" %@"];
+	formattedResult = [NSString stringWithFormat:formattedResult, model.baseOperator];
+	
+	if (!model.secondOperand.length) {
+		NSLog(@"%@", formattedResult);
+		return formattedResult;
+	}
+	
+	formattedResult = [formattedResult stringByAppendingString:@" %@"];
+	formattedResult = [NSString stringWithFormat:formattedResult, model.secondOperand];
+	
+	NSLog(@"%@", formattedResult);
+	
+	return formattedResult;
 }
 
 @end

@@ -10,12 +10,16 @@
 
 @interface PASExpressionModel : NSObject
 
-@property (nonatomic) NSInteger *firstOperand;
-@property (nonatomic) NSInteger *secondOperand;
+@property (nonatomic, copy) NSString *firstOperand;
+@property (nonatomic, copy) NSString *secondOperand;
 @property (nonatomic, copy) NSString *baseOperator;
 
 @property (nonatomic) NSInteger *result;
 
+@property (nonatomic, readonly, copy) NSString *formattedExpression;
+
 - (NSInteger)calculateResult;
+
+- (void)appendToFirstOperand:(NSString *)character;
 
 @end

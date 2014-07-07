@@ -44,7 +44,7 @@
 	if (intValue) {
 		NSLog(@"Integer %d", intValue);
 	}
-//	self.expressionLabel.text = [self.expressionLabel.text stringByAppendingString:title];
+	self.expressionLabel.text = [self.expressionLabel.text stringByAppendingString:title];
 }
 
 @end

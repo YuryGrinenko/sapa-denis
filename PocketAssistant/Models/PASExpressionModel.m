@@ -15,4 +15,16 @@
 	return 0;
 }
 
++ (NSSet *)keyPathsForValuesAffectingFormattedExpression
+{
+	return [NSSet setWithArray:@[@"firstOperand", @"secondOperand", @"baseOperator"]];
+}
+
+- (void)appendToFirstOperand:(NSString *)character
+{
+	if (self.firstOperand.length || [character integerValue]) {
+		self.firstOperand = [self.firstOperand stringByAppendingString:character];
+	}
+}
+
 @end

@@ -16,6 +16,13 @@ typedef NS_ENUM(NSInteger, PASExpressionControllerState) {
 	PASExpressionControllerStateEnterSecondOperand
 };
 
+typedef NS_ENUM(NSInteger, PASBaseOperatorsCode) {
+	PASBaseOperatorsCodePlus = 43,
+	PASBaseOperatorsCodeMinus = 8211,
+	PASBaseOperatorsCodeMultiply = 10005,
+	PASBaseOperatorsCodeDelivery = 47,
+};
+
 static NSInteger const kEqualCode = '=';
 
 @interface PASExpressionController ()
@@ -44,6 +51,9 @@ static NSInteger const kEqualCode = '=';
 		case PASExpressionControllerStatePrint:
 			[PASExpressionFormatter formattedStringFromExpression:self.operationModel];
 			self.controllerState = PASExpressionControllerStateEnterFirstOperand;
+			if ([self isCharacterNumber:character]) {
+				[self.operationModel appendToFirstOperand:character];
+			}
 			break;
 			
 		case PASExpressionControllerStateEnterFirstOperand:
@@ -71,10 +81,37 @@ static NSInteger const kEqualCode = '=';
 			} else {
 				self.controllerState = PASExpressionControllerStatePrint;
 				
-				[self.operationModel addOperator:character];
+//				[self.operationModel addOperator:character];
+				[PASExpressionFormatter formattedStringFromExpression:self.operationModel];
 			}
 			break;
 			
+			
+		default:
+			break;
+	}
+}
+
+- (void)calculateOperationResult
+{
+	int symbolCode = [self.operationModel.baseOperator characterAtIndex:0];
+	
+	switch (symbolCode) {
+		case PASBaseOperatorsCodePlus:
+			self.operationModel.result = [NSString stringWithFormat:@"%i", [self.operationModel.firstOperand integerValue] + [self.operationModel.secondOperand integerValue]];
+			break;
+			
+		case PASBaseOperatorsCodeMinus:
+						self.operationModel.result = [NSString stringWithFormat:@"%i", [self.operationModel.firstOperand integerValue] - [self.operationModel.secondOperand integerValue]];
+			break;
+			
+		case PASBaseOperatorsCodeMultiply:
+						self.operationModel.result = [NSString stringWithFormat:@"%i", [self.operationModel.firstOperand integerValue] * [self.operationModel.secondOperand integerValue]];
+			break;
+			
+		case PASBaseOperatorsCodeDelivery:
+						self.operationModel.result = [NSString stringWithFormat:@"%.2f", [self.operationModel.firstOperand integerValue] / ([self.operationModel.secondOperand integerValue] * 1.)];
+			break;
 			
 		default:
 			break;

@@ -9,12 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "PASExpressionModel.h"
 
-typedef NS_ENUM(NSInteger, PASBaseOperatorsCode) {
-	PASBaseOperatorsCodePlus = 43,
-	PASBaseOperatorsCodeMinus = 8211,
-	PASBaseOperatorsCodeMultiply = 10005,
-	PASBaseOperatorsCodeDelivery = 47,
-};
+
 
 @interface PASExpressionController : NSObject
 

@@ -60,7 +60,7 @@
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
 	if ([keyPath isEqualToString:NSStringFromSelector(@selector(formattedModelPresentation))]) {
-		self.expressionLabel.text = [change objectForKey:NSKeyValueChangeNewKey];
+//		self.expressionLabel.text = [change objectForKey:NSKeyValueChangeNewKey];
 	}
 }
 

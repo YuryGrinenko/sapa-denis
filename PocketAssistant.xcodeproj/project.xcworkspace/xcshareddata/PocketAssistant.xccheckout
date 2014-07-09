@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A5473BB4-56BE-43E3-920A-F3FEFDFD337F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>PocketAssistant</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>ED3C1473-C472-4D19-90DF-83C2EF75951E</key>
+		<string>https://github.com/sapa-denis/PocketAssistant.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>PocketAssistant.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>ED3C1473-C472-4D19-90DF-83C2EF75951E</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/sapa-denis/PocketAssistant.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>ED3C1473-C472-4D19-90DF-83C2EF75951E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>ED3C1473-C472-4D19-90DF-83C2EF75951E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>PocketAssistant</string>
+		</dict>
+	</array>
+</dict>
+</plist>

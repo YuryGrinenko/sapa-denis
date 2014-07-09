@@ -23,9 +23,9 @@
 @property (nonatomic, copy) NSString *baseOperator;
 @property (nonatomic, readonly, getter = isEmpty) BOOL empty;
 
-@property (nonatomic) NSInteger *result;
+@property (nonatomic) NSString *result;
 
-//@property (nonatomic, readonly, copy) NSString *formattedExpression;
+
 
 - (NSInteger)calculateResult;
 

@@ -18,6 +18,8 @@ typedef NS_ENUM(NSInteger, PASBaseOperatorsCode) {
 
 @interface PASExpressionController : NSObject
 
+@property (nonatomic, copy, readonly) NSString *formattedModelPresentation;
+
 - (void)fillModelWithNextCharacter:(NSString *)character;
 
 @end

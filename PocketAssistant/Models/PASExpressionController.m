@@ -33,6 +33,7 @@ static NSInteger const kEqualCode = '=';
     if (self) {
         _operationModel = [PASExpressionModel new];
 		_controllerState = PASExpressionControllerStatePrint;
+		
     }
     return self;
 }
@@ -83,6 +84,11 @@ static NSInteger const kEqualCode = '=';
 - (BOOL)isCharacterNumber:(NSString *)character
 {
 	return isnumber([character characterAtIndex:0]);
+}
+
++ (BOOL)automaticallyNotifiesObserversOfFormattedModelPresentation
+{
+	return NO;
 }
 
 - (void) fillFirstOperand

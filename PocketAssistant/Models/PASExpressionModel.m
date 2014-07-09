@@ -60,4 +60,10 @@
 	}
 }
 
+- (void)didChangeValueForKey:(NSString *)key
+{
+	[super didChangeValueForKey:key];
+	//TODO:
+}
+
 @end

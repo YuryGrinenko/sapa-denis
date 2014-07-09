@@ -25,6 +25,14 @@
 	_expressionLabel.text = @"0";
 	
 	_expressionController = [PASExpressionController new];
+	[_expressionController addObserver:self forKeyPath:NSStringFromSelector(@selector(formattedModelPresentation))
+							   options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionInitial
+							   context:nil];
+}
+
+- (void)dealloc
+{
+    [_expressionController removeObserver:self forKeyPath:NSStringFromSelector(@selector(formattedModelPresentation))];
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,6 +55,13 @@
 	
 	[self.expressionController fillModelWithNextCharacter:title];
 //	self.expressionLabel.text = [self.expressionLabel.text stringByAppendingString:title];
+}
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+	if ([keyPath isEqualToString:NSStringFromSelector(@selector(formattedModelPresentation))]) {
+		self.expressionLabel.text = [change objectForKey:NSKeyValueChangeNewKey];
+	}
 }
 
 @end

@@ -23,7 +23,9 @@ typedef NS_ENUM(NSInteger, PASBaseOperatorsCode) {
 	PASBaseOperatorsCodeDelivery = 47,
 };
 
-static NSInteger const kEqualCode = '=';
+static const NSInteger kPASEqualCode = '=';
+static const NSInteger kPASClearCode = 'C';
+
 
 @interface PASExpressionController ()
 
@@ -41,7 +43,6 @@ static NSInteger const kEqualCode = '=';
         _operationModel = [PASExpressionModel new];
 		_controllerState = PASExpressionControllerStatePrint;
 		[_operationModel addListener:self];
-		
     }
     return self;
 }
@@ -53,6 +54,15 @@ static NSInteger const kEqualCode = '=';
 
 - (void)fillModelWithNextCharacter:(NSString *)character
 {
+	if ([character characterAtIndex:0] == kPASClearCode) {
+		
+		self.controllerState = PASExpressionControllerStatePrint;
+		[self.operationModel cleanModel];
+		[PASExpressionFormatter formattedStringFromExpression:self.operationModel];
+		
+		return;
+	}
+	
 	switch (self.controllerState) {
 		case PASExpressionControllerStatePrint:
 			[PASExpressionFormatter formattedStringFromExpression:self.operationModel];
@@ -85,13 +95,16 @@ static NSInteger const kEqualCode = '=';
 			if ([self isCharacterNumber:character]) {
 				[self.operationModel appendToSecondOperand:character];
 			} else {
-				self.controllerState = PASExpressionControllerStatePrint;
 				
-//				[self.operationModel addOperator:character];
-				[PASExpressionFormatter formattedStringFromExpression:self.operationModel];
+				
+				if ([character characterAtIndex:0] == kPASEqualCode) {
+					self.controllerState = PASExpressionControllerStatePrint;
+					[self calculateOperationResult];
+					[PASExpressionFormatter formattedStringFromExpression:self.operationModel];
+				}
+
 			}
 			break;
-			
 			
 		default:
 			break;
@@ -132,11 +145,6 @@ static NSInteger const kEqualCode = '=';
 + (BOOL)automaticallyNotifiesObserversOfFormattedModelPresentation
 {
 	return NO;
-}
-
-- (void) fillFirstOperand
-{
-	
 }
 
 #pragma mark PASExpressionModelObserver

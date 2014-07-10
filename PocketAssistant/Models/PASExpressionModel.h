@@ -21,13 +21,14 @@
 @property (nonatomic, copy) NSString *firstOperand;
 @property (nonatomic, copy) NSString *secondOperand;
 @property (nonatomic, copy) NSString *baseOperator;
+
+@property (nonatomic, copy) NSString *result;
+
 @property (nonatomic, readonly, getter = isEmpty) BOOL empty;
 
-@property (nonatomic) NSString *result;
+- (void)cleanModel;
 
-
-
-- (NSInteger)calculateResult;
+- (void)calculateResult;
 
 - (void)appendToFirstOperand:(NSString *)character;
 - (void)addOperator:(NSString *)baseOperator;

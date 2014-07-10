@@ -13,14 +13,14 @@
 
 + (NSString *)formattedStringFromExpression:(PASExpressionModel *)model;
 {
-	NSString *formattedResult = @"";
+	NSString *formattedResult = @"0";
 	
 	if ([model isEmpty]) {
 		NSLog(@"%@", formattedResult);
 		return formattedResult;
 	}
 	
-	formattedResult = [formattedResult stringByAppendingString:@"%@"];
+	formattedResult = @"%@";// [formattedResult stringByAppendingString:@"%@"];
 	formattedResult = [NSString stringWithFormat:formattedResult, model.firstOperand];
 	
 	if (!model.baseOperator.length) {
@@ -38,6 +38,14 @@
 	
 	formattedResult = [formattedResult stringByAppendingString:@" %@"];
 	formattedResult = [NSString stringWithFormat:formattedResult, model.secondOperand];
+	
+	if (!model.result.length) {
+		NSLog(@"%@", formattedResult);
+		return formattedResult;
+	}
+	
+	formattedResult = [formattedResult stringByAppendingString:@" = %@"];
+	formattedResult = [NSString stringWithFormat:formattedResult, model.result];
 	
 	NSLog(@"%@", formattedResult);
 	

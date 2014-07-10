@@ -25,23 +25,28 @@
 		_firstOperand = @"";
 		_secondOperand = @"";
 		_baseOperator = @"";
+		_result = @"";
     }
     return self;
 }
 
-- (void)clearModel
+- (void)cleanModel
 {
 	_empty = YES;
+	self.firstOperand = @"";
+	self.secondOperand = @"";
+	self.baseOperator = @"";
+	self.result = @"";
 }
 
-- (NSInteger)calculateResult
+- (void)calculateResult
 {
-	return 0;
+	return;
 }
 
 + (NSSet *)keyPathsForValuesAffectingFormattedExpression
 {
-	return [NSSet setWithArray:@[@"firstOperand", @"secondOperand", @"baseOperator"]];
+	return [NSSet setWithArray:@[@"firstOperand", @"secondOperand", @"baseOperator", @"result"]];
 }
 
 - (void)appendToFirstOperand:(NSString *)character
@@ -100,6 +105,13 @@
 	[self willChangeValueForKey:@"baseOperator"];
 	_baseOperator = baseOperator;
 	[self didChangeValueForKey:@"baseOperator"];
+}
+
+- (void)setResult:(NSString *)result
+{
+	[self willChangeValueForKey:@"result"];
+	_result = result;
+	[self didChangeValueForKey:@"result"];
 }
 
 #pragma mark -

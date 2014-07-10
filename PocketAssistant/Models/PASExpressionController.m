@@ -40,9 +40,15 @@ static NSInteger const kEqualCode = '=';
     if (self) {
         _operationModel = [PASExpressionModel new];
 		_controllerState = PASExpressionControllerStatePrint;
+		[_operationModel addListener:self];
 		
     }
     return self;
+}
+
+- (void)dealloc
+{
+	[_operationModel removeListener:self];
 }
 
 - (void)fillModelWithNextCharacter:(NSString *)character
@@ -131,6 +137,15 @@ static NSInteger const kEqualCode = '=';
 - (void) fillFirstOperand
 {
 	
+}
+
+#pragma mark PASExpressionModelObserver
+
+- (void)expressionModelDidChange:(PASExpressionModel *)model
+{
+	[self willChangeValueForKey:@"formattedModelPresentation"];
+	_formattedModelPresentation = [PASExpressionFormatter formattedStringFromExpression:model];
+	[self didChangeValueForKey:@"formattedModelPresentation"];
 }
 
 @end

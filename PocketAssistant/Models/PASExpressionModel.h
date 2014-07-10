@@ -10,7 +10,7 @@
 
 @class PASExpressionModel;
 
-@protocol ExpressionModelObserver <NSObject>
+@protocol PASExpressionModelObserver <NSObject>
 
 - (void)expressionModelDidChange:(PASExpressionModel *)model;
 
@@ -37,7 +37,7 @@
 
 @interface PASExpressionModel (ExpressionModelObserving)
 
-- (void)addListener:(id<ExpressionModelObserver>)listener;
-- (void)removeListener:(id<ExpressionModelObserver>)listener;
+- (void)addListener:(id<PASExpressionModelObserver>)listener;
+- (void)removeListener:(id<PASExpressionModelObserver>)listener;
 
 @end

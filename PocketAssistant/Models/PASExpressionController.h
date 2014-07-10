@@ -9,9 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "PASExpressionModel.h"
 
-
-
-@interface PASExpressionController : NSObject
+@interface PASExpressionController : NSObject <PASExpressionModelObserver>
 
 @property (nonatomic, copy, readonly) NSString *formattedModelPresentation;
 

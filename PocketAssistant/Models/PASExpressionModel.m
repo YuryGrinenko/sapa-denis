@@ -8,6 +8,12 @@
 
 #import "PASExpressionModel.h"
 
+@interface PASExpressionModel ()
+
+@property (nonatomic, strong) NSHashTable *listeners;
+
+@end
+
 @implementation PASExpressionModel
 
 - (instancetype)init
@@ -15,6 +21,7 @@
     self = [super init];
     if (self) {
         _empty = YES;
+		_listeners = [NSHashTable weakObjectsHashTable];
 		_firstOperand = @"";
 		_secondOperand = @"";
 		_baseOperator = @"";
@@ -24,7 +31,7 @@
 
 - (void)clearModel
 {
-	
+	_empty = YES;
 }
 
 - (NSInteger)calculateResult
@@ -63,7 +70,51 @@
 - (void)didChangeValueForKey:(NSString *)key
 {
 	[super didChangeValueForKey:key];
-	//TODO:
+	for (id <PASExpressionModelObserver> listener in self.listeners)
+    {
+        if ([listener respondsToSelector:@selector(expressionModelDidChange:)])
+        {
+            [listener expressionModelDidChange:self];
+        }
+    }
+}
+
+#pragma mark - PASExpressionModel Setters
+
+- (void)setFirstOperand:(NSString *)firstOperand
+{
+	[self willChangeValueForKey:@"firstOperand"];
+	_firstOperand = firstOperand;
+	[self didChangeValueForKey:@"firstOperand"];
+}
+
+- (void)setSecondOperand:(NSString *)secondOperand
+{
+	[self willChangeValueForKey:@"secondOperand"];
+	_secondOperand = secondOperand;
+	[self didChangeValueForKey:@"secondOperand"];
+}
+
+- (void)setBaseOperator:(NSString *)baseOperator
+{
+	[self willChangeValueForKey:@"baseOperator"];
+	_baseOperator = baseOperator;
+	[self didChangeValueForKey:@"baseOperator"];
+}
+
+#pragma mark -
+
+- (void)addListener:(id <PASExpressionModelObserver>)listener
+{
+    NSParameterAssert([listener conformsToProtocol:@protocol(PASExpressionModelObserver)]);
+//    NSAssert(!self.isNotifying, @"Cannot support mutation during notification");
+    [self.listeners addObject:listener];
+}
+
+- (void)removeListener:(id <PASExpressionModelObserver>)listener
+{
+//    NSAssert(!self.isNotifying, @"Cannot support mutation during notification");
+    [self.listeners removeObject:listener];
 }
 
 @end

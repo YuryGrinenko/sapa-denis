@@ -41,26 +41,24 @@
 }
 
 - (IBAction)touchPanelButton:(UIButton *)sender
-{
+{	
 	NSString *title = sender.titleLabel.text;
-	NSInteger intValue = [title integerValue];
-	
-	int symbolCode = [title characterAtIndex:0];
-	
-	NSLog(@"symbol code %d", symbolCode);
-	
-	if (intValue) {
-		NSLog(@"Integer %d", intValue);
-	}
 	
 	[self.expressionController fillModelWithNextCharacter:title];
-//	self.expressionLabel.text = [self.expressionLabel.text stringByAppendingString:title];
+	
+//	NSInteger intValue = [title integerValue];
+//	int symbolCode = [title characterAtIndex:0];
+//	NSLog(@"symbol code %d", symbolCode);
+//	if (intValue) {
+//		NSLog(@"Integer %d", intValue);
+//	}
 }
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
 	if ([keyPath isEqualToString:NSStringFromSelector(@selector(formattedModelPresentation))]) {
-//		self.expressionLabel.text = [change objectForKey:NSKeyValueChangeNewKey];
+		NSString *changedValue = [change objectForKey:NSKeyValueChangeNewKey];
+		self.expressionLabel.text = [changedValue isKindOfClass:[NSNull class]] ? @"0" : changedValue;
 	}
 }
 

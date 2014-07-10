@@ -66,8 +66,10 @@ static const NSInteger kPASClearCode = 'C';
 	switch (self.controllerState) {
 		case PASExpressionControllerStatePrint:
 			[PASExpressionFormatter formattedStringFromExpression:self.operationModel];
-			self.controllerState = PASExpressionControllerStateEnterFirstOperand;
+			
 			if ([self isCharacterNumber:character]) {
+				[self.operationModel cleanModel];
+				self.controllerState = PASExpressionControllerStateEnterFirstOperand;
 				[self.operationModel appendToFirstOperand:character];
 			}
 			break;
@@ -76,9 +78,8 @@ static const NSInteger kPASClearCode = 'C';
 		{
 			if ([self isCharacterNumber:character]) {
 				[self.operationModel appendToFirstOperand:character];
-			} else {
+			} else  if ([character characterAtIndex:0] != kPASEqualCode) {
 				self.controllerState = PASExpressionControllerStateEnterOperator;
-				
 				[self.operationModel addOperator:character];
 			}
 			break;
@@ -101,8 +102,9 @@ static const NSInteger kPASClearCode = 'C';
 					self.controllerState = PASExpressionControllerStatePrint;
 					[self calculateOperationResult];
 					[PASExpressionFormatter formattedStringFromExpression:self.operationModel];
+					
+//					[self.operationModel cleanModel];
 				}
-
 			}
 			break;
 			

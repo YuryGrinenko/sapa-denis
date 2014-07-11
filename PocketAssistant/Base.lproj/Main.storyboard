@@ -22,7 +22,7 @@
                             </label>
                             <view contentMode="scaleToFill" id="voQ-Ok-gbk">
                                 <rect key="frame" x="0.0" y="224" width="320" height="324"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qVg-M6-PvT">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
@@ -212,7 +212,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Uc4-tn-2J5">
-                                        <rect key="frame" x="162" y="243" width="80" height="80"/>
+                                        <rect key="frame" x="81" y="243" width="80" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                         <color key="backgroundColor" red="1" green="0.81922767640000005" blue="0.1535108801" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
@@ -243,23 +243,6 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="touchPanelButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Dvk-aw-msJ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ndZ-hN-dlR">
-                                        <rect key="frame" x="81" y="243" width="80" height="80"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
-                                        <color key="backgroundColor" red="1" green="0.81922767640000005" blue="0.1535108801" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                        <state key="normal" title="9">
-                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                <integer key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="touchPanelButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="uAr-Bu-OqN"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Jw9-cR-NSb">
@@ -294,6 +277,23 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="touchPanelButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="oma-rC-It0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ndZ-hN-dlR">
+                                        <rect key="frame" x="162" y="243" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.81922767640000005" blue="0.1535108801" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                        <state key="normal" title="9">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="touchPanelButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="uAr-Bu-OqN"/>
                                         </connections>
                                     </button>
                                 </subviews>

@@ -9,7 +9,7 @@
 #import "PASViewController.h"
 #import "PASExpressionController.h"
 
-@interface PASViewController ()
+@interface PASViewController () 
 
 @property (nonatomic, weak) IBOutlet UILabel *expressionLabel;
 @property (nonatomic, strong) PASExpressionController *expressionController;

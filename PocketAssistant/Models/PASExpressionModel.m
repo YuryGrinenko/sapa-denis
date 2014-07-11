@@ -15,6 +15,8 @@ typedef NS_ENUM(NSInteger, PASBaseOperatorsCode) {
 	PASBaseOperatorsCodeDelivery = 47,
 };
 
+static const int kMaxLengthOfNumbersInOperand = 9;
+
 @interface PASExpressionModel ()
 
 @property (nonatomic, strong) NSHashTable *listeners;
@@ -81,8 +83,10 @@ typedef NS_ENUM(NSInteger, PASBaseOperatorsCode) {
 - (void)appendToFirstOperand:(NSString *)character
 {
 	if (self.firstOperand.length || [character integerValue]) {
-		_empty = NO;
-		self.firstOperand = [self.firstOperand stringByAppendingString:character];
+		if (self.firstOperand.length < kMaxLengthOfNumbersInOperand) {
+			_empty = NO;
+			self.firstOperand = [self.firstOperand stringByAppendingString:character];
+		}
 	}
 }
 
@@ -96,8 +100,10 @@ typedef NS_ENUM(NSInteger, PASBaseOperatorsCode) {
 - (void)appendToSecondOperand:(NSString *)character
 {
 	if (self.secondOperand.length || [character integerValue]) {
-		_empty = NO;
-		self.secondOperand = [self.secondOperand stringByAppendingString:character];
+		if (self.firstOperand.length < kMaxLengthOfNumbersInOperand) {
+			_empty = NO;
+			self.secondOperand = [self.secondOperand stringByAppendingString:character];
+		}
 	}
 }
 

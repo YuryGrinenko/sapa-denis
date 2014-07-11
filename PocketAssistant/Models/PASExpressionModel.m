@@ -66,8 +66,15 @@ static const int kMaxLengthOfNumbersInOperand = 9;
 			break;
 			
 		case PASBaseOperatorsCodeDelivery:
-			self.result = [NSString stringWithFormat:@"%.2f", [self.firstOperand integerValue] / ([self.secondOperand integerValue] * 1.)];
+		{
+			NSNumber *resultNumberPresentation = [NSNumber numberWithDouble:[self.firstOperand integerValue] / ([self.secondOperand integerValue] * 1.)];
+			
+			NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+			[numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
+			
+			self.result = [NSString stringWithFormat:@"%@", [numberFormatter stringFromNumber:resultNumberPresentation]];
 			break;
+		}
 			
 		default:
 			break;
@@ -100,7 +107,7 @@ static const int kMaxLengthOfNumbersInOperand = 9;
 - (void)appendToSecondOperand:(NSString *)character
 {
 	if (self.secondOperand.length || [character integerValue]) {
-		if (self.firstOperand.length < kMaxLengthOfNumbersInOperand) {
+		if (self.secondOperand.length < kMaxLengthOfNumbersInOperand) {
 			_empty = NO;
 			self.secondOperand = [self.secondOperand stringByAppendingString:character];
 		}
@@ -149,18 +156,16 @@ static const int kMaxLengthOfNumbersInOperand = 9;
 	[self didChangeValueForKey:@"result"];
 }
 
-#pragma mark -
+#pragma mark - Observable
 
 - (void)addListener:(id <PASExpressionModelObserver>)listener
 {
     NSParameterAssert([listener conformsToProtocol:@protocol(PASExpressionModelObserver)]);
-//    NSAssert(!self.isNotifying, @"Cannot support mutation during notification");
     [self.listeners addObject:listener];
 }
 
 - (void)removeListener:(id <PASExpressionModelObserver>)listener
 {
-//    NSAssert(!self.isNotifying, @"Cannot support mutation during notification");
     [self.listeners removeObject:listener];
 }
 

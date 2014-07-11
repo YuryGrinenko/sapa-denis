@@ -52,7 +52,6 @@ typedef NS_ENUM(NSInteger, PASExpressionControllerState) {
 		self.controllerState = PASExpressionControllerStatePrint;
 		[self.operationModel cleanModel];
 		[PASExpressionFormatter formattedStringFromExpression:self.operationModel];
-		
 		return;
 	}
 	
@@ -74,7 +73,7 @@ typedef NS_ENUM(NSInteger, PASExpressionControllerState) {
 			} else  if ([character characterAtIndex:0] != kPASEqualCode) {
 				self.controllerState = PASExpressionControllerStateEnterOperator;
 				[self.operationModel addOperator:character];
-			}
+			} 
 			break;
 		}
 			

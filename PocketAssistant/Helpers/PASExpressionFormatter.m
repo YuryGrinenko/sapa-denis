@@ -20,7 +20,7 @@
 		return formattedResult;
 	}
 	
-	formattedResult = @"%@";// [formattedResult stringByAppendingString:@"%@"];
+	formattedResult = @"%@";
 	formattedResult = [NSString stringWithFormat:formattedResult, model.firstOperand];
 	
 	if (!model.baseOperator.length) {

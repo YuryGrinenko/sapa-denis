@@ -12,7 +12,7 @@ typedef NS_ENUM(NSInteger, PASBaseOperatorsCode) {
 	PASBaseOperatorsCodePlus = 43,
 	PASBaseOperatorsCodeMinus = 8211,
 	PASBaseOperatorsCodeMultiply = 10005,
-	PASBaseOperatorsCodeDelivery = 47,
+	PASBaseOperatorsCodeDivide = 47,
 };
 
 static const int kMaxLengthOfNumbersInOperand = 9;
@@ -70,7 +70,7 @@ static const int kMaxLengthOfNumbersInOperand = 9;
 			doubleValueOfResult = doubleValueOfFirstOnerand * doubleValueOfSecondOnerand;
 			break;
 			
-		case PASBaseOperatorsCodeDelivery:
+		case PASBaseOperatorsCodeDivide:
 			doubleValueOfResult = doubleValueOfFirstOnerand / doubleValueOfSecondOnerand;
 			break;
 			

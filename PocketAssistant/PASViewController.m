@@ -44,14 +44,10 @@
 {	
 	NSString *title = sender.titleLabel.text;
 	
-	[self.expressionController fillModelWithNextCharacter:title];
+	unichar a = [title characterAtIndex:0];
+	[NSString stringWithCharacters:&a length:1];
 	
-//	NSInteger intValue = [title integerValue];
-//	int symbolCode = [title characterAtIndex:0];
-//	NSLog(@"symbol code %d", symbolCode);
-//	if (intValue) {
-//		NSLog(@"Integer %d", intValue);
-//	}
+	[self.expressionController fillModelWithNextCharacter:title];
 }
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context

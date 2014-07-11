@@ -86,11 +86,6 @@ static const int kMaxLengthOfNumbersInOperand = 9;
 	self.result = [NSString stringWithFormat:@"%@", [numberFormatter stringFromNumber:resultNumberPresentation]];
 }
 
-+ (NSSet *)keyPathsForValuesAffectingFormattedExpression
-{
-	return [NSSet setWithArray:@[@"firstOperand", @"secondOperand", @"baseOperator", @"result"]];
-}
-
 - (void)appendToFirstOperand:(NSString *)character
 {
 	if (self.firstOperand.length || [character integerValue]) {
@@ -128,6 +123,11 @@ static const int kMaxLengthOfNumbersInOperand = 9;
             [listener expressionModelDidChange:self];
         }
     }
+}
+
++ (NSSet *)keyPathsForValuesAffectingFormattedExpression
+{
+	return [NSSet setWithArray:@[@"firstOperand", @"secondOperand", @"baseOperator", @"result"]];
 }
 
 #pragma mark - PASExpressionModel Setters

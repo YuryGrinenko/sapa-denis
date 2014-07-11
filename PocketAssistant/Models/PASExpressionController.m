@@ -8,6 +8,8 @@
 
 #import "PASExpressionController.h"
 #import "PASExpressionFormatter.h"
+
+
 static const NSInteger kPASEqualCode = '=';
 static const NSInteger kPASClearCode = 'C';
 
@@ -17,7 +19,6 @@ typedef NS_ENUM(NSInteger, PASExpressionControllerState) {
 	PASExpressionControllerStateEnterOperator,
 	PASExpressionControllerStateEnterSecondOperand
 };
-
 
 @interface PASExpressionController ()
 
@@ -106,12 +107,14 @@ typedef NS_ENUM(NSInteger, PASExpressionControllerState) {
 	return isnumber([character characterAtIndex:0]);
 }
 
+#pragma mark - Key-Value Observing
+
 + (BOOL)automaticallyNotifiesObserversOfFormattedModelPresentation
 {
 	return NO;
 }
 
-#pragma mark PASExpressionModelObserver
+#pragma mark - PASExpressionModelObserver
 
 - (void)expressionModelDidChange:(PASExpressionModel *)model
 {

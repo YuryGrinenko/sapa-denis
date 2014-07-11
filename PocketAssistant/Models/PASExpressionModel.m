@@ -52,34 +52,38 @@ static const int kMaxLengthOfNumbersInOperand = 9;
 {
 	int symbolCode = [self.baseOperator characterAtIndex:0];
 	
+
+	double doubleValueOfFirstOnerand = [self.firstOperand doubleValue];
+	double doubleValueOfSecondOnerand = [self.secondOperand doubleValue];
+	double doubleValueOfResult = 0.;
+	
 	switch (symbolCode) {
 		case PASBaseOperatorsCodePlus:
-			self.result = [NSString stringWithFormat:@"%i", [self.firstOperand integerValue] + [self.secondOperand integerValue]];
+			doubleValueOfResult = doubleValueOfFirstOnerand + doubleValueOfSecondOnerand;
 			break;
 			
 		case PASBaseOperatorsCodeMinus:
-			self.result = [NSString stringWithFormat:@"%i", [self.firstOperand integerValue] - [self.secondOperand integerValue]];
+			doubleValueOfResult = doubleValueOfFirstOnerand - doubleValueOfSecondOnerand;
 			break;
 			
 		case PASBaseOperatorsCodeMultiply:
-			self.result = [NSString stringWithFormat:@"%i", [self.firstOperand integerValue] * [self.secondOperand integerValue]];
+			doubleValueOfResult = doubleValueOfFirstOnerand * doubleValueOfSecondOnerand;
 			break;
 			
 		case PASBaseOperatorsCodeDelivery:
-		{
-			NSNumber *resultNumberPresentation = [NSNumber numberWithDouble:[self.firstOperand integerValue] / ([self.secondOperand integerValue] * 1.)];
-			
-			NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
-			[numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
-			
-			self.result = [NSString stringWithFormat:@"%@", [numberFormatter stringFromNumber:resultNumberPresentation]];
+			doubleValueOfResult = doubleValueOfFirstOnerand / doubleValueOfSecondOnerand;
 			break;
-		}
 			
 		default:
 			break;
 	}
-
+	
+	NSNumber *resultNumberPresentation = [NSNumber numberWithDouble:doubleValueOfResult];
+	
+	NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+	[numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
+	
+	self.result = [NSString stringWithFormat:@"%@", [numberFormatter stringFromNumber:resultNumberPresentation]];
 }
 
 + (NSSet *)keyPathsForValuesAffectingFormattedExpression

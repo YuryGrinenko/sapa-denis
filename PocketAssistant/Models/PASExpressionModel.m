@@ -8,6 +8,13 @@
 
 #import "PASExpressionModel.h"
 
+typedef NS_ENUM(NSInteger, PASBaseOperatorsCode) {
+	PASBaseOperatorsCodePlus = 43,
+	PASBaseOperatorsCodeMinus = 8211,
+	PASBaseOperatorsCodeMultiply = 10005,
+	PASBaseOperatorsCodeDelivery = 47,
+};
+
 @interface PASExpressionModel ()
 
 @property (nonatomic, strong) NSHashTable *listeners;
@@ -41,7 +48,29 @@
 
 - (void)calculateResult
 {
-	return;
+	int symbolCode = [self.baseOperator characterAtIndex:0];
+	
+	switch (symbolCode) {
+		case PASBaseOperatorsCodePlus:
+			self.result = [NSString stringWithFormat:@"%i", [self.firstOperand integerValue] + [self.secondOperand integerValue]];
+			break;
+			
+		case PASBaseOperatorsCodeMinus:
+			self.result = [NSString stringWithFormat:@"%i", [self.firstOperand integerValue] - [self.secondOperand integerValue]];
+			break;
+			
+		case PASBaseOperatorsCodeMultiply:
+			self.result = [NSString stringWithFormat:@"%i", [self.firstOperand integerValue] * [self.secondOperand integerValue]];
+			break;
+			
+		case PASBaseOperatorsCodeDelivery:
+			self.result = [NSString stringWithFormat:@"%.2f", [self.firstOperand integerValue] / ([self.secondOperand integerValue] * 1.)];
+			break;
+			
+		default:
+			break;
+	}
+
 }
 
 + (NSSet *)keyPathsForValuesAffectingFormattedExpression

@@ -16,12 +16,7 @@ typedef NS_ENUM(NSInteger, PASExpressionControllerState) {
 	PASExpressionControllerStateEnterSecondOperand
 };
 
-typedef NS_ENUM(NSInteger, PASBaseOperatorsCode) {
-	PASBaseOperatorsCodePlus = 43,
-	PASBaseOperatorsCodeMinus = 8211,
-	PASBaseOperatorsCodeMultiply = 10005,
-	PASBaseOperatorsCodeDelivery = 47,
-};
+
 
 static const NSInteger kPASEqualCode = '=';
 static const NSInteger kPASClearCode = 'C';
@@ -96,42 +91,12 @@ static const NSInteger kPASClearCode = 'C';
 			if ([self isCharacterNumber:character]) {
 				[self.operationModel appendToSecondOperand:character];
 			} else {
-				
-				
 				if ([character characterAtIndex:0] == kPASEqualCode) {
 					self.controllerState = PASExpressionControllerStatePrint;
-					[self calculateOperationResult];
+					[self.operationModel calculateResult];
 					[PASExpressionFormatter formattedStringFromExpression:self.operationModel];
-					
-//					[self.operationModel cleanModel];
 				}
 			}
-			break;
-			
-		default:
-			break;
-	}
-}
-
-- (void)calculateOperationResult
-{
-	int symbolCode = [self.operationModel.baseOperator characterAtIndex:0];
-	
-	switch (symbolCode) {
-		case PASBaseOperatorsCodePlus:
-			self.operationModel.result = [NSString stringWithFormat:@"%i", [self.operationModel.firstOperand integerValue] + [self.operationModel.secondOperand integerValue]];
-			break;
-			
-		case PASBaseOperatorsCodeMinus:
-						self.operationModel.result = [NSString stringWithFormat:@"%i", [self.operationModel.firstOperand integerValue] - [self.operationModel.secondOperand integerValue]];
-			break;
-			
-		case PASBaseOperatorsCodeMultiply:
-						self.operationModel.result = [NSString stringWithFormat:@"%i", [self.operationModel.firstOperand integerValue] * [self.operationModel.secondOperand integerValue]];
-			break;
-			
-		case PASBaseOperatorsCodeDelivery:
-						self.operationModel.result = [NSString stringWithFormat:@"%.2f", [self.operationModel.firstOperand integerValue] / ([self.operationModel.secondOperand integerValue] * 1.)];
 			break;
 			
 		default:

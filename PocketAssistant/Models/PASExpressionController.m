@@ -120,11 +120,9 @@ typedef NS_ENUM(NSInteger, PASExpressionControllerState) {
 {
 	if ([self isCharacterNumber:self.character]) {
 		[self.operationModel appendToSecondOperand:self.character];
-	} else {
-		if ([self.character characterAtIndex:0] == kPASEqualCode) {
+	} else if ([self.character characterAtIndex:0] == kPASEqualCode || self.operationModel.secondOperand.length) {
 			self.controllerState = PASExpressionControllerStatePrint;
 			[self.operationModel calculateResult];
-		}
 	}
 }
 

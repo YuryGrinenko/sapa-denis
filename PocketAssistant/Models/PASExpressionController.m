@@ -25,6 +25,8 @@ typedef NS_ENUM(NSInteger, PASExpressionControllerState) {
 @property (nonatomic) PASExpressionControllerState controllerState;
 @property (nonatomic, strong) PASExpressionModel *operationModel;
 
+@property (nonatomic, copy) NSString *character;
+
 @end
 
 @implementation PASExpressionController
@@ -45,61 +47,88 @@ typedef NS_ENUM(NSInteger, PASExpressionControllerState) {
 	[_operationModel removeListener:self];
 }
 
+
+
 - (void)fillModelWithNextCharacter:(NSString *)character
 {
 	if ([character characterAtIndex:0] == kPASClearCode) {
 		
 		self.controllerState = PASExpressionControllerStatePrint;
 		[self.operationModel cleanModel];
-		[PASExpressionFormatter formattedStringFromExpression:self.operationModel];
 		return;
 	}
 	
+	self.character = character;
+	
+	[self callStateSwitcher];
+}
+
+#pragma mark - State Machine
+
+- (void)callStateSwitcher
+{
 	switch (self.controllerState) {
 		case PASExpressionControllerStatePrint:
-			[PASExpressionFormatter formattedStringFromExpression:self.operationModel];
-			
-			if ([self isCharacterNumber:character]) {
-				[self.operationModel cleanModel];
-				self.controllerState = PASExpressionControllerStateEnterFirstOperand;
-				[self.operationModel appendToFirstOperand:character];
-			}
+			[self callPrintState];
 			break;
 			
 		case PASExpressionControllerStateEnterFirstOperand:
-		{
-			if ([self isCharacterNumber:character]) {
-				[self.operationModel appendToFirstOperand:character];
-			} else  if ([character characterAtIndex:0] != kPASEqualCode) {
-				self.controllerState = PASExpressionControllerStateEnterOperator;
-				[self.operationModel addOperator:character];
-			} 
+			[self callEnterFirstOperandState];
 			break;
-		}
 			
 		case PASExpressionControllerStateEnterOperator:
-			if ([self isCharacterNumber:character]) {
-				self.controllerState = PASExpressionControllerStateEnterSecondOperand;
-				[self.operationModel appendToSecondOperand:character];
-			}
+			[self callEnterOperatorState];
 			break;
 			
 		case PASExpressionControllerStateEnterSecondOperand:
-			if ([self isCharacterNumber:character]) {
-				[self.operationModel appendToSecondOperand:character];
-			} else {
-				if ([character characterAtIndex:0] == kPASEqualCode) {
-					self.controllerState = PASExpressionControllerStatePrint;
-					[self.operationModel calculateResult];
-					[PASExpressionFormatter formattedStringFromExpression:self.operationModel];
-				}
-			}
+			[self callEnterSecondOperandState];
 			break;
 			
 		default:
 			break;
 	}
 }
+
+- (void)callPrintState
+{
+	if ([self isCharacterNumber:self.character]) {
+		[self.operationModel cleanModel];
+		self.controllerState = PASExpressionControllerStateEnterFirstOperand;
+		[self callStateSwitcher];
+	}
+}
+
+- (void)callEnterFirstOperandState
+{
+	if ([self isCharacterNumber:self.character]) {
+		[self.operationModel appendToFirstOperand:self.character];
+	} else  if ([self.character characterAtIndex:0] != kPASEqualCode) {
+		self.controllerState = PASExpressionControllerStateEnterOperator;
+		[self callStateSwitcher];
+	} else if ([self.character characterAtIndex:0] == kPASEqualCode) {
+		self.controllerState = PASExpressionControllerStatePrint;
+	}
+}
+
+- (void)callEnterOperatorState
+{
+	[self.operationModel addOperator:self.character];
+	self.controllerState = PASExpressionControllerStateEnterSecondOperand;
+}
+
+- (void)callEnterSecondOperandState
+{
+	if ([self isCharacterNumber:self.character]) {
+		[self.operationModel appendToSecondOperand:self.character];
+	} else {
+		if ([self.character characterAtIndex:0] == kPASEqualCode) {
+			self.controllerState = PASExpressionControllerStatePrint;
+			[self.operationModel calculateResult];
+		}
+	}
+}
+
+#pragma mark -
 
 - (BOOL)isCharacterNumber:(NSString *)character
 {

@@ -137,6 +137,7 @@ typedef NS_ENUM(NSInteger, PASExpressionControllerState) {
 
 #pragma mark - Key-Value Observing
 
+#warning Этот метод никем не используется
 + (BOOL)automaticallyNotifiesObserversOfFormattedModelPresentation
 {
 	return NO;

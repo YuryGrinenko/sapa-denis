@@ -11,6 +11,7 @@
 
 @interface PASExpressionController : NSObject <PASExpressionModelObserver>
 
+#warning Зачем это объявление здесь? Перенеси его в *.m
 @property (nonatomic, copy, readonly) NSString *formattedModelPresentation;
 
 - (void)fillModelWithNextCharacter:(NSString *)character;

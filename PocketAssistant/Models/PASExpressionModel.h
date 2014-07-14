@@ -18,6 +18,9 @@
 
 @interface PASExpressionModel : NSObject
 
+#warning Лучше не показывать read-write property в *.h, особенно если как у нас ввода производится
+#pragma    через специальные методы. В таком случае лучше read-write объявления перенести в *.m, а в *.h
+#pragma    оставить @property (nonatomic, copy, readonly)
 @property (nonatomic, copy) NSString *firstOperand;
 @property (nonatomic, copy) NSString *secondOperand;
 @property (nonatomic, copy) NSString *baseOperator;

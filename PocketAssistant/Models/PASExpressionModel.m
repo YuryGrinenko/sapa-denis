@@ -52,7 +52,7 @@ static const int kMaxLengthOfNumbersInOperand = 9;
 {
 	int symbolCode = [self.baseOperator characterAtIndex:0];
 	
-
+#warning Опечатка в doubleValueOfFirstOnerand и doubleValueOfSecondOnerand
 	double doubleValueOfFirstOnerand = [self.firstOperand doubleValue];
 	double doubleValueOfSecondOnerand = [self.secondOperand doubleValue];
 	double doubleValueOfResult = 0.;
@@ -125,6 +125,7 @@ static const int kMaxLengthOfNumbersInOperand = 9;
     }
 }
 
+#warning Метод никем не используется
 + (NSSet *)keyPathsForValuesAffectingFormattedExpression
 {
 	return [NSSet setWithArray:@[@"firstOperand", @"secondOperand", @"baseOperator", @"result"]];

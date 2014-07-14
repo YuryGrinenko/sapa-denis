@@ -21,6 +21,10 @@ static const int kMaxLengthOfNumbersInOperand = 9;
 
 @property (nonatomic, strong) NSHashTable *listeners;
 
+@property (nonatomic, copy) NSString *firstOperand;
+@property (nonatomic, copy) NSString *secondOperand;
+@property (nonatomic, copy) NSString *baseOperator;
+
 @end
 
 @implementation PASExpressionModel
@@ -52,26 +56,26 @@ static const int kMaxLengthOfNumbersInOperand = 9;
 {
 	int symbolCode = [self.baseOperator characterAtIndex:0];
 	
-#warning Опечатка в doubleValueOfFirstOnerand и doubleValueOfSecondOnerand
-	double doubleValueOfFirstOnerand = [self.firstOperand doubleValue];
-	double doubleValueOfSecondOnerand = [self.secondOperand doubleValue];
+
+	double doubleValueOfFirstOperand = [self.firstOperand doubleValue];
+	double doubleValueOfSecondOperand = [self.secondOperand doubleValue];
 	double doubleValueOfResult = 0.;
 	
 	switch (symbolCode) {
 		case PASBaseOperatorsCodePlus:
-			doubleValueOfResult = doubleValueOfFirstOnerand + doubleValueOfSecondOnerand;
+			doubleValueOfResult = doubleValueOfFirstOperand + doubleValueOfSecondOperand;
 			break;
 			
 		case PASBaseOperatorsCodeMinus:
-			doubleValueOfResult = doubleValueOfFirstOnerand - doubleValueOfSecondOnerand;
+			doubleValueOfResult = doubleValueOfFirstOperand - doubleValueOfSecondOperand;
 			break;
 			
 		case PASBaseOperatorsCodeMultiply:
-			doubleValueOfResult = doubleValueOfFirstOnerand * doubleValueOfSecondOnerand;
+			doubleValueOfResult = doubleValueOfFirstOperand * doubleValueOfSecondOperand;
 			break;
 			
 		case PASBaseOperatorsCodeDivide:
-			doubleValueOfResult = doubleValueOfFirstOnerand / doubleValueOfSecondOnerand;
+			doubleValueOfResult = doubleValueOfFirstOperand / doubleValueOfSecondOperand;
 			break;
 			
 		default:

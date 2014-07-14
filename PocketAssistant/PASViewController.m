@@ -21,8 +21,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-#warning UIBaselineAdjustmentAlignBaselines является значением по умолчанию, зачем его устанавливать?
-	[_expressionLabel setBaselineAdjustment:UIBaselineAdjustmentAlignBaselines];
 	_expressionLabel.text = @"0";
 	
 	_expressionController = [PASExpressionController new];

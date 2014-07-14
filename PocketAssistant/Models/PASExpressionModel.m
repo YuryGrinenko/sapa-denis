@@ -130,6 +130,7 @@ static const int kMaxLengthOfNumbersInOperand = 9;
 }
 
 #warning Метод никем не используется
+#pragma Використовується для key-value observing`а. Вказані поля, зміна яких вимагає реакції в model controller`і
 + (NSSet *)keyPathsForValuesAffectingFormattedExpression
 {
 	return [NSSet setWithArray:@[@"firstOperand", @"secondOperand", @"baseOperator", @"result"]];

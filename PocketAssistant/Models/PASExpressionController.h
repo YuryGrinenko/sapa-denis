@@ -12,6 +12,8 @@
 @interface PASExpressionController : NSObject <PASExpressionModelObserver>
 
 #warning Зачем это объявление здесь? Перенеси его в *.m
+
+#pragma якщо зробити приватним, view controller не зможе підписатись на зміни цього property через key-value observing
 @property (nonatomic, copy, readonly) NSString *formattedModelPresentation;
 
 - (void)fillModelWithNextCharacter:(NSString *)character;

@@ -25,6 +25,8 @@ typedef NS_ENUM(NSInteger, PASExpressionControllerState) {
 @property (nonatomic) PASExpressionControllerState controllerState;
 @property (nonatomic, strong) PASExpressionModel *operationModel;
 
+@property (nonatomic, copy) NSString *formattedModelPresentation;
+
 @property (nonatomic, copy) NSString *character;
 
 @end
@@ -138,6 +140,10 @@ typedef NS_ENUM(NSInteger, PASExpressionControllerState) {
 #pragma mark - Key-Value Observing
 
 #warning Этот метод никем не используется
+
+#pragma Використовується для key-value observing`а. Аналог keyPathsForValuesAffectingValueForKey:(NSString *)key
+#pragma що використовує паттерн +automaticallyNotifiesObserversOf<Key> для одного property
+
 + (BOOL)automaticallyNotifiesObserversOfFormattedModelPresentation
 {
 	return NO;
@@ -148,7 +154,7 @@ typedef NS_ENUM(NSInteger, PASExpressionControllerState) {
 - (void)expressionModelDidChange:(PASExpressionModel *)model
 {
 	[self willChangeValueForKey:@"formattedModelPresentation"];
-	_formattedModelPresentation = [PASExpressionFormatter formattedStringFromExpression:model];
+	self.formattedModelPresentation = [PASExpressionFormatter formattedStringFromExpression:model];
 	[self didChangeValueForKey:@"formattedModelPresentation"];
 }
 
